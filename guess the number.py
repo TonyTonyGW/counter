@@ -1,6 +1,6 @@
 import numpy as np
 
-def counter(num:int=1) -> int:
+def guess_the_number(num:int=1) -> int:
     """Возвращает число попыток, которые требуются для угадывания заданного в параметре 'num' числа.
     
     Args:
@@ -21,10 +21,21 @@ def counter(num:int=1) -> int:
 
 
 
-def midle_counter(counter):
+def midle_guess_the_number(guess_the_number):
+    """Расчитывает среднее колл-во попыток для угадывания числа
+
+    Args:
+        guess_the_number (_type_): Передаётся функция guess_the_number
+
+    Returns:
+        Возвращает среднее число, в формате int.
+    """
     result_array = []
+    
     nums_array = np.random.randint(1,101,size=1000)
+    
     for num_iter in nums_array:
-        result_array.append(counter(num_iter))
+        result_array.append(guess_the_number(num_iter))
     res = int(np.mean(result_array))
+    
     return res
