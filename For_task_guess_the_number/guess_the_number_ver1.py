@@ -37,6 +37,7 @@ def midle_guess_the_number(guess_the_number):
     """
     result_array = []#  Создаем пустой массив типа list, куда в процессе выполения кода, будут помещатся результаты каждого из выполнений скрипта.
     
+    np.random.seed(1)#              Фиксируем сид для воспроизводимости
     nums_array = np.random.randint(1,101,size=1000)#    Создаём массив случайных чисел, которые будут передаваться в функцию guess_the_number) размером в 1000 значений.
     
     for num_iter in nums_array:#    Перебираем массив, заполняем result_array
